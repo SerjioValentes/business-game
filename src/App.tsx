@@ -1,12 +1,22 @@
 import React from 'react';
-import {Button} from "@mui/material";
+import LogInPage from "./components/pages/login";
+import HomePage from "./components/pages/main";
+import {theme} from './components/common/style'
+import { ThemeProvider } from "@mui/material/styles";
 
 function App() {
+
+
+
   return (
     <div>
-      <Button>show</Button>
+        <ThemeProvider theme={theme}>
+        {/*<LogInPage />*/}
+     <HomePage />
+        </ThemeProvider>
     </div>
   );
 }
 
 export default App;
+
