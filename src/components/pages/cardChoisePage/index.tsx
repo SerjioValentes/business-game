@@ -27,11 +27,18 @@ const CardChoisePage = () => {
                 </Box>
             </Box>
 
-            <Card raised>
+            <Box sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
+
+            <Card sx={{m: 4, p: 2, maxWidth: 500}} raised>
                 <Typography>День 1</Typography>
-                <Typography>Описание</Typography>
                 <Typography>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad assumenda cum cupiditate delectus deserunt dolor eius exercitationem itaque nostrum placeat, quia reiciendis repellendus, rerum sunt. Aspernatur, dolorem necessitatibus. Quae.</Typography>
             </Card>
+
+            <Card sx={{m: 4, p: 2, maxWidth: 500}} raised>
+                <Typography>Карта на всех</Typography>
+                <Typography>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad assumenda cum cupiditate delectus deserunt dolor eius exercitationem itaque nostrum placeat, quia reiciendis repellendus, rerum sunt. Aspernatur, dolorem necessitatibus. Quae.</Typography>
+            </Card>
+            </Box>
         </div>
     );
 };
