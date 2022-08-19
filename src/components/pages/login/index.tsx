@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, TextField, Typography, Box} from "@mui/material";
 import {styled} from "@mui/material/styles";
+import {apiGet, apiPost} from "../../api";
 
 const BoxWrapper = styled(Box)(({theme}) => ({
     [theme.breakpoints.down('xl')]: {
@@ -14,7 +15,29 @@ const BoxWrapper = styled(Box)(({theme}) => ({
     }
 }))
 
+
 const LogInPage = () => {
+    type Data = {
+        email: string;
+        phone: string;
+    }
+
+    const data: Data = {
+        email: 'admin@admin.com',
+        phone: '89872774813'
+    }
+
+    const logIn = () => {
+    apiPost({
+        url: 'user/create',
+        postData: data
+    }).then((res: any) => {
+        console.log(res)
+    }).catch((e: any) => {
+        console.log(e)
+    })
+    }
+
     return (
         <div>
 
@@ -49,7 +72,7 @@ const LogInPage = () => {
                 </Box>
 
                 <Box sx={{ display: 'flex', mx: 'auto'}}>
-                    <Button sx={{borderRadius: 2}} variant={'contained'}>LogIn</Button>
+                    <Button onClick={logIn} sx={{borderRadius: 2}} variant={'contained'}>LogIn</Button>
                 </Box>
             </div>
         </Box>
