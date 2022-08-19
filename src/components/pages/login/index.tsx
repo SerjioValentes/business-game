@@ -58,16 +58,17 @@ const LogInPage = () => {
 
                 <Box>
                     <TextField
-                        sx={{[`& fieldset`]: {
-                                borderRadius: 2,
-                            }}}
+                        // sx={{[`& fieldset`]: {
+                        //         borderRadius: 2,
+                        //     }}}
                         fullWidth label={'E-mail'}/>
                 </Box>
 
                 <Box sx={{my: 2}}>
-                    <TextField sx={{[`& fieldset`]: {
-                            borderRadius: 2,
-                        }}}
+                    <TextField
+                        // sx={{[`& fieldset`]: {
+                        //     borderRadius: 2,
+                        // }}}
                                fullWidth label={'Phone number'}/>
                 </Box>
 

@@ -23,6 +23,27 @@ export const theme = createTheme({
         }
     },
     components: {
+        MuiTextField: {
+            styleOverrides: {
+                root: {
+                    "& .MuiInputBase-input + fieldset": {
+                        border: `1px solid #D0D0D0FF`,
+                        borderRadius: 15,
+                    },
+                    "&.subvariant-hovered": {
+                        "& fieldset": {
+                            border: 10
+                        },
+                        "& .MuiInputBase-input:hover + fieldset": {
+                            border: `2px solid white`
+                        },
+                        "& .MuiInputBase-input:focus + fieldset": {
+                            border: `2px solid white`
+                        }
+                    }
+                }
+            }
+        },
         MuiButton: {
             defaultProps: {
                 disableElevation: true
