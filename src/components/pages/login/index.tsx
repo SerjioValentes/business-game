@@ -26,8 +26,10 @@ const LogInPage = () => {
         email: 'admin@admin.com',
         phone: '89872774813'
     }
+    console.log(data)
 
     const logIn = () => {
+        console.log('123')
     apiPost({
         url: 'user/create',
         postData: data
@@ -36,6 +38,8 @@ const LogInPage = () => {
     }).catch((e: any) => {
         console.log(e)
     })
+
+
     }
 
     return (

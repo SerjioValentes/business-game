@@ -1,78 +1,85 @@
 import React from 'react';
-import {Box, InputLabel, TextField} from "@mui/material";
+import {Box, Divider, InputLabel, TextField, Typography} from "@mui/material";
 
 const BusinessPart = () => {
     return (
         <div>
-            <Box>
-                <Box>
-                    <InputLabel>Сколько человек нас увидело</InputLabel>
-                    <Box>
-                        <TextField/>
-                        <TextField/>
-                    </Box>
+            <Box sx={{
+                border: 1,
+                borderRadius: 2,
+                p: 2,
+                m: 2,
+                maxWidth: 300,
+                display: 'flex',
+                flexWrap: 'wrap'
+            }}>
+
+                <Box sx={{my: 1}}>
+                <Typography>Сколько человек нас увидело</Typography>
+                    <TextField sx={{width: 130, mr: 2}}/>
+                    <TextField sx={{width: 130}}/>
                 </Box>
-                <Box>
-                    <InputLabel>Конверсия сайта/баннера</InputLabel>
-                    <Box>
-                        <TextField/>
-                        <TextField/>
-                    </Box>
+                <Box sx={{my: 1}}>
+                    <Typography>Конверсия сайта/баннера</Typography>
+                    <TextField sx={{width: 130, mr: 2}}/>
+                    <TextField sx={{width: 130}}/>
                 </Box>
-                <Box>
-                    <InputLabel>Количество лидов(хотят товар или услугу</InputLabel>
-                    <Box>
-                        <TextField/>
-                        <TextField/>
-                    </Box>
+                <Box sx={{my: 1}}>
+                    <Typography>Количество лидов(хотят товар или услугу</Typography>
+                    <TextField sx={{width: 130, mr: 2}}/>
+                    <TextField sx={{width: 130}}/>
                 </Box>
-                <Box>
-                    <InputLabel>Конверсия в оплату</InputLabel>
-                    <Box>
-                        <TextField/>
-                        <TextField/>
-                    </Box>
+                <Box sx={{my: 1}}>
+                    <Typography>Конверсия в оплату</Typography>
+                    <TextField sx={{width: 130, mr: 2}}/>
+                    <TextField sx={{width: 130}}/>
                 </Box>
-                <Box>
-                    <InputLabel>Количество  лидов без маркетинга (сарафан)</InputLabel>
-                    <Box>
-                        <TextField/>
-                        <TextField/>
-                    </Box>
+                <Box sx={{my: 1}}>
+                    <Typography>Количество лидов без маркетинга (сарафан)</Typography>
+                    <TextField sx={{width: 130, mr: 2}}/>
+                    <TextField sx={{width: 130}}/>
                 </Box>
-                <Box>
-                    <InputLabel>Лиды привлеченные разово</InputLabel>
-                    <Box>
-                        <TextField/>
-                        <TextField/>
-                    </Box>
+                <Box sx={{my: 1}}>
+                    <Typography>Лиды привлеченные разово</Typography>
+                    <TextField sx={{width: 130, mr: 2}}/>
+                    <TextField sx={{width: 130}}/>
                 </Box>
-                <Box>
-                    <InputLabel>Оплат</InputLabel>
-                    <Box>
-                        <TextField/>
-                        <TextField/>
-                    </Box>
+                <Box sx={{my: 1}}>
+                    <Typography>Оплат</Typography>
+                    <TextField sx={{width: 130, mr: 2}}/>
+                    <TextField sx={{width: 130}}/>
                 </Box>
-                <Box>
-                    <InputLabel>Конверсия в постоянных клиентов</InputLabel>
-                    <Box>
-                        <TextField/>
-                        <TextField/>
-                    </Box>
+                <Box sx={{my: 1}}>
+                    <Typography>Конверсия в постоянных клиентов</Typography>
+                    <TextField sx={{width: 130, mr: 2}}/>
+                    <TextField sx={{width: 130}}/>
                 </Box>
-                <Box>
-                    <InputLabel>Клиенты платят регулярно(LTV)</InputLabel>
-                    <Box>
-                        <TextField/>
-                        <TextField/>
-                    </Box>
+                <Box sx={{my: 1}}>
+                    <Typography>Клиенты платят регулярно(LTV)</Typography>
+                    <TextField sx={{width: 130, mr: 2}}/>
+                    <TextField sx={{width: 130}}/>
                 </Box>
 
-                {/*Start ---Это поле видимо не редактируется*/}
-                <TextField label={'Средний чек'}/>
-                <TextField label={'Оборот в мес'}/>
-                {/*End -----Это поле видимо не редактируется*/}
+                <div>
+                    <div>
+                        <Divider sx={{my: 2}}>Итог</Divider>
+                    </div>
+                    <Box sx={{display: 'flex', width: '105%', justifyContent: 'space-between'}}>
+                        <div>
+                            <TextField
+                                sx={{width: 130}}
+                                label={'Средний чек'}
+                            value={'100'}
+                            />
+                        </div>
+                        <div>
+                            <TextField
+                            value={'100'}
+                            sx={{width: 130}}
+                            label={'Оборот в мес'}/>
+                        </div>
+                    </Box>
+                </div>
             </Box>
         </div>
     );
