@@ -26,9 +26,14 @@ export const theme = createTheme({
         MuiTextField: {
             styleOverrides: {
                 root: {
+                    "& label": {
+                        position: 'relative',
+                        top: 20,
+                    },
                     "& .MuiInputBase-input + fieldset": {
                         border: `1px solid #D0D0D0FF`,
                         borderRadius: 15,
+                        height: 50,
                     },
                     "&.subvariant-hovered": {
                         "& fieldset": {

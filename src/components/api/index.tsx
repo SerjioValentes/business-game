@@ -28,11 +28,11 @@ Api.interceptors.request.use(function (config: any) {
 export const apiPost: any = async({url, postData = {}, headerList = {}} : {url: string, postData: any, headerList: any}) => {
     const res = await Api.post(url, postData, {headers: headerList});
 
-    return res;
+    return res.data;
 };
 
 export const apiGet = async ({url, headerList = {}}: {url: string, headerList: any}) => {
     const res = await Api.get(url, {headers: headerList});
 
-    return res;
+    return res.data;
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import {Button, TextField, Typography, Box} from "@mui/material";
 import {styled} from "@mui/material/styles";
 import {apiGet, apiPost} from "../../api";
+import {useForm} from "react-hook-form";
 
 const BoxWrapper = styled(Box)(({theme}) => ({
     [theme.breakpoints.down('xl')]: {
@@ -15,72 +16,72 @@ const BoxWrapper = styled(Box)(({theme}) => ({
     }
 }))
 
-
-const LogInPage = () => {
-    type Data = {
+    interface Data {
         email: string;
         phone: string;
     }
 
-    const data: Data = {
-        email: 'admin@admin.com',
-        phone: '89872774813'
-    }
-    console.log(data)
+const LogInPage = () => {
 
-    const logIn = () => {
-        console.log('123')
-    apiPost({
-        url: 'user/create',
-        postData: data
-    }).then((res: any) => {
-        console.log(res)
-    }).catch((e: any) => {
-        console.log(e)
-    })
+    const {handleSubmit, setValue, register} = useForm<Data>();
+
+    const logIn = (data: Data) => {
+
+        console.log(data)
 
 
+        // apiPost({
+        //     url: 'user/create',
+        //     postData: data
+        // }).then((res: any) => {
+        //     console.log(res)
+        //     if (res.error)
+        //         return console.log(res.data)
+        //     window.localStorage.setItem('token', res?.data?.access_token)
+        //     window.localStorage.setItem('userRole', res?.data?.user?.role[0]?.role)
+        // }).catch((e: any) => {
+        //     console.log(e)
+        // })
     }
 
     return (
         <div>
 
-        <Box
-            sx={{
-                p: 12,
-                height: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: 'background.paper'
-            }}
-        >
-            {/*<BoxWrapper>*/}
-            <div>
+            <Box
+                sx={{
+                    p: 12,
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backgroundColor: 'background.paper'
+                }}
+            >
+                {/*<BoxWrapper>*/}
+                <div>
 
-                <Typography align={'center'} sx={{mb: 2}} variant={'h5'}>Log In</Typography>
+                    <Typography align={'center'} sx={{mb: 1}} variant={'h5'}>Log In</Typography>
+                    <form onSubmit={handleSubmit(logIn)}>
+                        <Box>
+                            <TextField
+                                {...register('email')}
+                                fullWidth
+                                label={'E-mail'}/>
+                        </Box>
 
-                <Box>
-                    <TextField
-                        // sx={{[`& fieldset`]: {
-                        //         borderRadius: 2,
-                        //     }}}
-                        fullWidth label={'E-mail'}/>
-                </Box>
+                        <Box>
+                            <TextField
+                                {...register('phone')}
+                                fullWidth
+                                label={'Phone number'}/>
+                        </Box>
 
-                <Box sx={{my: 2}}>
-                    <TextField
-                        // sx={{[`& fieldset`]: {
-                        //     borderRadius: 2,
-                        // }}}
-                               fullWidth label={'Phone number'}/>
-                </Box>
-
-                <Box sx={{ display: 'flex', mx: 'auto'}}>
-                    <Button onClick={logIn} sx={{borderRadius: 2}} variant={'contained'}>LogIn</Button>
-                </Box>
-            </div>
-        </Box>
+                        <Box sx={{display: 'flex', mx: 'auto'}}>
+                            <Button type='submit' sx={{borderRadius: 2}} variant={'contained'}>LogIn</Button>
+                        </Box>
+                    </form>
+                </div>
+            </Box>
         </div>
 
     );
