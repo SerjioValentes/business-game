@@ -11,8 +11,8 @@ function App() {
   return (
     <div>
         <ThemeProvider theme={theme}>
-        <LogInPage />
-     {/*<HomePage />*/}
+        {/*<LogInPage />*/}
+        <HomePage />
         </ThemeProvider>
     </div>
   );
