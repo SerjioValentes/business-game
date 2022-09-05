@@ -7,7 +7,7 @@ import {Typography} from "@mui/material";
 
 const CardChoisePage = () => {
     return (
-        <Box sx={{maxWidth: 400, mx: 2}}>
+        <Box sx={{maxWidth: 300, mx: 1}}>
             <Box sx={{width: '100%', display: 'flex', justifyContent: 'center'}}>
                 <Box sx={{display: 'inline-block', mt: 2, minWidth: 310}}>
                     <Box sx={{p: 2}}>
@@ -29,14 +29,19 @@ const CardChoisePage = () => {
 
             <Box sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
 
-            <Card sx={{m: 4, p: 2}} raised>
+            <Card sx={{my: 2, p: 2}}>
                 <Typography>День 1</Typography>
                 <Typography>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad assumenda cum cupiditate delectus deserunt dolor eius exercitationem itaque nostrum placeat, quia reiciendis repellendus, rerum sunt. Aspernatur, dolorem necessitatibus. Quae.</Typography>
             </Card>
 
-            <Card sx={{m: 4, p: 2}} raised>
+            <Card sx={{m: 2, p: 2}}>
                 <Typography>Карта на всех</Typography>
                 <Typography>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad assumenda cum cupiditate delectus deserunt dolor eius exercitationem itaque nostrum placeat, quia reiciendis repellendus, rerum sunt. Aspernatur, dolorem necessitatibus. Quae.</Typography>
+            </Card>
+            <Card sx={{m: 2, p: 2}}>
+                <Typography>Герои - Цель Бизнеса</Typography>
+
+                <Typography>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, cum deleniti dolorem dolores eligendi enim eum excepturi fugit in minus modi, natus nemo numquam obcaecati odit omnis quaerat quos repudiandae!</Typography>
             </Card>
             </Box>
         </Box>

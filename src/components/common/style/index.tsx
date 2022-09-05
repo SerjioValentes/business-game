@@ -3,7 +3,7 @@ import { createTheme } from '@mui/material/styles';
 export const theme = createTheme({
     palette: {
         primary: {
-            main: '#0288d1',
+            main: '#f5f5f5',
             light: '#5eb8ff',
             dark: '#005b9f',
         },
@@ -33,7 +33,7 @@ export const theme = createTheme({
                     "& .MuiInputBase-input + fieldset": {
                         border: `1px solid #D0D0D0FF`,
                         borderRadius: 15,
-                        height: 50,
+                        // height: 50,
                     },
                     "&.subvariant-hovered": {
                         "& fieldset": {
@@ -129,6 +129,7 @@ export const theme = createTheme({
     },
     typography: {
         fontFamily:
-            '"Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+            '"Montserrat",'
+            // ' -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
     },
 });

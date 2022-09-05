@@ -1,47 +1,72 @@
 import React from 'react';
-import {Accordion, AccordionDetails, AccordionSummary, Box, Typography} from "@mui/material";
+import {Accordion, AccordionDetails, AccordionSummary, Box, Button, TextField, Typography} from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Card from "@mui/material/Card";
 
 const MyLife = () => {
-    return (
-        <div>
-            <Accordion>
-                <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                >Личная жизнь</AccordionSummary>
-                <AccordionDetails>
 
-                    <Box sx={{display: 'flex', flexWrap: 'wrap', my: 2}}>
-                        <Card raised sx={{m: 0.5, p: 1}}>
-                            <Typography>Капитал</Typography>
-                            <Typography>5000</Typography>
-                        </Card>
-                        <Card raised sx={{m: 0.5, p: 1}}>
-                            <Typography>Дивиденды</Typography>
-                            <Typography>5000</Typography>
-                        </Card>
-                        <Card raised sx={{m: 0.5, p: 1}}>
-                            <Typography>Зарплата</Typography>
-                            <Typography>5000</Typography>
-                        </Card>
-                        <Card raised sx={{m: 0.5, p: 1}}>
-                            <Typography>Дельта</Typography>
-                            <Typography>5000</Typography>
-                        </Card>
-                        <Card raised sx={{m: 0.5, p: 1}}>
-                            <Typography>Разовые расходы</Typography>
-                            <Typography>5000</Typography>
-                        </Card>
-                        <Card raised sx={{m: 0.5, p: 1}}>
-                            <Typography>Расходы на жизнь</Typography>
-                            <Typography>5000</Typography>
-                        </Card>
-                    </Box>
-                </AccordionDetails>
-            </Accordion>
-        </div>
+    const changeCapital = () => {
+
+    }
+
+    const arr: any = [
+        {name: 'Капитал', price: 5000},
+        {name: 'Дивиденды', price: 5000},
+        {name: 'Зарплата', price: 5000},
+        {name: 'Дельта', price: 5000},
+        {name: 'Разовые расходы', price: 5000},
+        {name: 'Расходы на жизнь', price: 5000},
+    ]
+
+    return (
+        <Box sx={{display: 'flex', flexWrap: 'wrap', ml: 35, p: 1}}>
+            {arr.map((item: any) =>
+            <Card
+                key={item.name}
+                 sx={{m: 0.5, p: 1}}>
+                <TextField
+                    margin="normal"
+                    variant={'standard'}
+                    sx={{
+                                mt: -3,
+                        '& .MuiInput-root': {
+                            '&:before, :after, :hover:not(.Mui-disabled):before': {
+                                borderBottom: 0,
+                            },
+                        },
+                    }}
+                    onChange={changeCapital}
+                    name={'capital'}
+                    label={item.name}
+                    defaultValue={item.price}/>
+            </Card>)}
+
+<Box sx={{
+    display: 'flex',
+    alignItems: 'center',
+    p: 0,
+}}>
+
+                <Button
+                    sx={{
+                        ml: 2
+                    }}
+                    color={'secondary'}
+                        variant={'contained'}
+                >Оставить</Button>
+                <Button
+                    sx={{
+                        mx: 1
+                    }}
+                    color={'secondary'}
+                        variant={'contained'}
+                >Отдать</Button>
+                <Button color={'secondary'}
+                        variant={'contained'}
+                >Сбросить</Button>
+</Box>
+
+        </Box>
     );
 };
 

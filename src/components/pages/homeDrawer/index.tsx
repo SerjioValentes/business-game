@@ -1,51 +1,83 @@
 import * as React from 'react';
 import Drawer from '@mui/material/Drawer';
-import {Box, Divider, MenuItem, TextField} from "@mui/material";
+import {AppBar, Box, Button, Divider, MenuItem, TextField, useTheme} from "@mui/material";
+import MyLife from "../../common/components/myLife";
 
-const HomeDrawer = () => {
+
+const HomeDrawer = ({children}: any) => {
+    const theme = useTheme();
+
 
     return (
-        <div>
-            {/*<Drawer*/}
-            {/*    variant="permanent"*/}
 
-            {/*    anchor={'left'}*/}
-            {/*    open={true}>*/}
-            {/*    <Box sx={{*/}
-            {/*        border: 1,*/}
-            {/*        borderRadius: 2,*/}
-            {/*        p: 2,*/}
-            {/*        m: 2,*/}
-            {/*        '& .MuiTextField-root': {*/}
-            {/*            my: 1,*/}
-            {/*        },*/}
-            {/*        textAlign: 'center',*/}
-            {/*    }}>*/}
 
-            {/*        <TextField label={'Выручка'}/>*/}
-            {/*        <div><TextField label={'Денег на р/с'}/></div>*/}
-            {/*        <div><TextField label={'Коэф-т рентабильности'}/></div>*/}
-            {/*        <div><TextField label={'Прибыль'}/></div>*/}
+        <Box sx={{display: 'flex'}}>
+            <AppBar
+                elevation={0}
+                position="fixed"
+            >
+                    <MyLife/>
+            </AppBar>
 
-            {/*        <Divider>Расходы</Divider>*/}
+            {/*<DrawerHeader sx={{display: 'flex', justifyContent: 'space-between', background: '#ffb300'}}>*/}
+            {/*    <img className='img-logo' src={logo} alt='logo BestCabins'/>*/}
 
-            {/*        <div><TextField label={'Расходы'}/></div>*/}
-            {/*        <div><TextField label={'Постоянные'}/></div>*/}
-            {/*        <div><TextField label={'Переменные'}/></div>*/}
-            {/*        <div><TextField label={'Налоги'}/></div>*/}
-            {/*    </Box>*/}
-            {/*</Drawer>*/}
+            {/*</DrawerHeader>*/}
 
-            <Box sx={{
-                width: 300
+            <Drawer
+                variant="permanent"
+                open={true}>
+<Box
+sx={{
+    py: 2,
+    background: '#ffb300',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    // justifyContent: 'flex-end',
+    // padding: theme.spacing(0, 1),
+
+    // necessary for content to be below app bar
+    ...theme.mixins.toolbar,
+}}>
+</Box>
+                <Box sx={{
+                    p: 2,
+                    m: 2,
+                    '& .MuiTextField-root': {
+                        // my: 1,
+                    },
+                    textAlign: 'center',}}>
+
+                    <TextField label={'Выручка'}/>
+                    <div><TextField label={'Денег на р/с'}/></div>
+                    <div><TextField label={'Коэф-т рентабильности'}/></div>
+                    <div><TextField label={'Прибыль'}/></div>
+
+                    <Divider>Расходы</Divider>
+
+                    <div><TextField label={'Расходы'}/></div>
+                    <div><TextField label={'Постоянные'}/></div>
+                    <div><TextField label={'Переменные'}/></div>
+                    <div><TextField label={'Налоги'}/></div>
+
+                </Box>
+
+
+
+
+
+
+            </Drawer> : <></>
+            <Box component="main" sx={{
+
+                flexGrow: 1, p: 3,
             }}>
+                {children}
             </Box>
+        </Box>
 
-
-
-
-        </div>
-    );
+    )
 }
 
 export default HomeDrawer;
